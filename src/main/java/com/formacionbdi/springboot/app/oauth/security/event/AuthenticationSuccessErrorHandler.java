@@ -33,13 +33,9 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 		System.out.println(mensaje);
 		log.info(mensaje);
 		
-		String mensaje2 = "Success Login fallido: " + authentication.getName();
-		log.info(mensaje2);
 		
-		String mensaje3 = "Success Login fallido: " + user.toString();
-		log.info(mensaje3);
-		
-		Usuario usuario = usuarioService.findByUsername(authentication.getName());
+		//Usuario usuario = usuarioService.findByUsername(authentication.getName());
+		Usuario usuario = usuarioService.findByUsername("farid");
 		
 		if(usuario.getIntentos() != null && usuario.getIntentos() > 0) {
 			usuario.setIntentos(0);
